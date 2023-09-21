@@ -1,0 +1,63 @@
+<div id="menuDiv">
+  <div id="closeMenuTriggerDiv" (click)="toggleMenu()"></div>
+
+  <div id="menu-wrapper">
+    <h1>Menu</h1>
+
+    <hr>
+
+    <nav *ngIf="allPages != []">
+      <a *ngFor="let page of allPages | keyvalue : defaultOrder" [attr.isActive]="currentPage == page.value['path']" (click)="redirectTo(page.value['path'], title)">{{page.value['path']}}</a>
+    </nav>
+  </div>
+</div>
+
+<main>
+  <header [attr.hasScrollbar]="hasScrollbar">
+    <section (click)="redirectTo('', title)">
+      <img src="assets/imgs/PNGs/dudushy.png" alt="icon" />
+
+      <h1>Neumorphism</h1>
+    </section>
+
+    <nav *ngIf="allPages != []" (click)="toggleMenu()">
+      <a *ngFor="let page of allPages | keyvalue : defaultOrder" [attr.isActive]="currentPage == page.value['path']" (click)="redirectTo(page.value['path'], title)">{{page.value['path']}}</a>
+    </nav>
+  </header>
+
+  <router-outlet></router-outlet>
+
+  <footer>
+    <div class="footer-wrapper" id="social">
+      <div id="socialDiv">
+        <a href="#" target="_blank">
+          <img src="assets/imgs/SVGs/logo-github.svg" alt="github" />
+        </a>
+
+        <a href="#" target="_blank">
+          <img src="assets/imgs/SVGs/logo-instagram.svg" alt="instagram" />
+        </a>
+
+        <a href="#" target="_blank">
+          <img src="assets/imgs/SVGs/logo-linkedin.svg" alt="linkedin" />
+        </a>
+
+        <a href="#" target="_blank">
+          <img src="assets/imgs/SVGs/logo-discord.svg" alt="discord" />
+        </a>
+
+        <a href="#" target="_blank">
+          <img src="assets/imgs/SVGs/logo-youtube.svg" alt="youtube" />
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-wrapper" id="credit">
+      <div id="creditDiv">
+        <h2>
+          Made with <span id="heart">&#10084;</span> by <a href="https://github.com/dudushy" target="_blank">dudushy</a>
+        </h2>
+      </div>
+    </div>
+  </footer>
+</main>

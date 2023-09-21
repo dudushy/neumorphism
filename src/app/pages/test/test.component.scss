@@ -1,0 +1,25 @@
+@import "/src/styles.scss";
+
+:host {
+  height: max-content;
+  width: 100%;
+  margin-top: calc(var(--responsiveUnit) * 6.5);
+  padding-block: 1%;
+  color: $light;
+  background-color: $shy-medium;
+}
+
+#content {
+  height: 100%;
+  width: 100%;
+  font-size: calc(var(--responsiveUnit) * 1.5);
+}
+
+p.custom {
+  font-size: calc(var(--responsiveUnit) * 7);
+}
+
+img.custom {
+  width: calc(var(--responsiveUnit) * 40);
+  height: calc(var(--responsiveUnit) * 4);
+}
